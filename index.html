@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room Program</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: red;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bloody-text {
+            font-size: 48px;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="Intro-Escape-Room-Zombie.html">Zombie Apocalypse</a>
+            <a href="Escape-Room-2.html">Escape Room 2</a>
+            <a href="Escape-Room-3.html">Escape Room 3</a>
+            <a href="Escape-Room-4.html">Escape Room 4</a>
+        </div>
+        <div class="main-content">
+            <div class="bloody-text">Escape Me</div>
+        </div>
+    </div>
+</body>
+</html>

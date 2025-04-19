@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery 1</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .letter {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .letter p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .hint {
+            font-size: 0.8em;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="letter">
+        <p>Missing and mistakes - Harry Potter Style</p>
+        <p>In the corner, and young boy stand. He looks at you with bigly brown eyes. He is standing next to a chair. Chair is brown. The chair is located nea a big door. The boy jumps in the chair and says. "I have some important news for you."</p>
+        <p class="hint">Find any grammar and spelling mistakes - and combine them in that order.</p>
+        <input type="text" id="codeInput" placeholder="Enter code here">
+        <button onclick="checkCode()">Answer</button>
+    </div>
+
+    <script>
+        function checkCode() {
+            const input = document.getElementById('codeInput').value.toLowerCase();
+            const correctCode = 'slytherin';
+
+            if (input === correctCode) {
+                window.location.href = 'Mystery2-zombie.html';
+            } else {
+                window.location.href = 'Wrong.html';
+            }
+        }
+    </script>
+</body>
+</html>

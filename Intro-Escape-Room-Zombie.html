@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Apocalypse Escape Room</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .terminal {
+            white-space: pre-wrap;
+            border: 2px solid #00FF00;
+            padding: 20px;
+            max-width: 80%;
+            text-align: center;
+        }
+        .blinking-cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #00FF00;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .continue-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid #00FF00;
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .continue-button:hover {
+            background-color: #00FF00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        You are in a war. A war between species. The human species and the zombie species. You have been trapped in this room  because we have had our doubts regarding your humanity. Therefore we have given you a series of mysteries for you to solve. If you solve all the mysteries the doors will open and you can enjoy your freedom. If you fail to provide the correct answer to any of the mysteries, a deadly toxin will be released into the room and you will die. Good luck.<span class="blinking-cursor"></span>
+    </div>
+    <a href="Mystery1-zombie.html" class="continue-button">Continue</a>
+</body>
+</html>

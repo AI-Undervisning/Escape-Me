@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>England and USA Word Scramble</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .question {
+            flex: 3;
+            font-size: 16px;
+            font-weight: bold;
+            padding-right: 20px;
+        }
+        .answer-container {
+            flex: 1;
+            min-width: 150px;
+        }
+        .answer-input {
+            padding: 8px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            text-transform: uppercase;
+            box-sizing: border-box;
+        }
+        .final-answer {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .scramble-hint {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+        .capital-input {
+            padding: 12px;
+            font-size: 20px;
+            border: 3px solid #0066cc;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .first-letter {
+            color: #0066cc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>England and USA Word Puzzle</h1>
+        
+        <div class="questions-section">
+            <!-- Question 1 -->
+            <div class="question-row">
+                <div class="question">1) The opposite of close</div>
+                <div class="answer-container">
+                    <input type="text" class="answer-input" id="answer1" placeholder="Answer">
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="question-row">
+                <div class="question">2) The opposite of Old</div>
+                <div class="answer-container">
+                    <input type="text" class="answer-input" id="answer2" placeholder="Answer">
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="question-row">
+                <div class="question">3) This city is also known as "The Big Apple"</div>
+                <div class="answer-container">
+                    <input type="text" class="answer-input" id="answer3" placeholder="Answer">
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="question-row">
+                <div class="question">4) This football team is not well-liked by people in Manchester</div>
+                <div class="answer-container">
+                    <input type="text" class="answer-input" id="answer4" placeholder="Answer">
+                </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="question-row">
+                <div class="question">5) "The Origin of Species" was written by Charles...</div>
+                <div class="answer-container">
+                    <input type="text" class="answer-input" id="answer5" placeholder="Answer">
+                </div>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="question-row">
+                <div class="question">6) The first black president of the United States was called Barack...</div>
+                <div class="answer-container">
+                    <input type="text" class="answer-input" id="answer6" placeholder="Answer">
+                </div>
+            </div>
+        </div>
+        
+        <div class="final-answer">
+            <div class="scramble-hint">Now Scramble for Capital</div>
+            <input type="text" class="capital-input" id="capitalAnswer" placeholder="Enter capital" maxlength="6">
+            <button class="submit-btn" onclick="checkAnswer()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        // Add auto-tabbing between answer fields
+        document.addEventListener('DOMContentLoaded', function() {
+            const answerInputs = document.querySelectorAll('.answer-input');
+            
+            for (let i = 0; i < answerInputs.length; i++) {
+                answerInputs[i].addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && i < answerInputs.length - 1) {
+                        e.preventDefault();
+                        answerInputs[i + 1].focus();
+                    } else if (e.key === 'Enter' && i === answerInputs.length - 1) {
+                        document.getElementById('capitalAnswer').focus();
+                    }
+                });
+            }
+            
+            // Add Enter key support for submission
+            document.getElementById('capitalAnswer').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    checkAnswer();
+                }
+            });
+        });
+        
+        // Check the final answer
+        function checkAnswer() {
+            const capitalAnswer = document.getElementById('capitalAnswer').value.toUpperCase();
+            if (capitalAnswer === 'LONDON') {
+                window.location.href = 'Unlock.html';
+            } else {
+                window.location.href = 'Wrong.html';
+            }
+        }
+    </script>
+</body>
+</html>
